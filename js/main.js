@@ -147,9 +147,9 @@ class Domino extends React.Component {
       <div className="domino">
         <div className="domino__wrapper">
           <div className="domino__buttons">
-            <input className="domino__button" type="button" onClick={this.rotateLeft} value="left"/>
+            <input className="domino__button domino__button_left" type="button" onClick={this.rotateLeft}/>
             <input className="domino__button" type="button" onClick={this.generateNumber} value="new domino"/>
-            <input className="domino__button" type="button" onClick={this.rotateRight} value="right"/>
+            <input className="domino__button domino__button_right" type="button" onClick={this.rotateRight}/>
           </div>
           <div className="domino__place">
             <div className="domino__item-wrapper"  style={{transform: `rotate(${rotate}deg) scale(${scaleItem})`, transition: `all ${rotateSpeed}s`}}>
