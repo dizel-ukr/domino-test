@@ -1,59 +1,9 @@
-class Dots extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  render(){
-    let className = '';
-    if(this.props.exist == 1){
-      className = 'dot'
-    }
-    return(
-      <div className={className}></div>
-    )
-  }
-}
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import Item from './item.jsx'
+import '../sass/style.scss';
 
-class Item extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      firstNum: this.props.firstSide,
-      secondNum: this.props.secondSide
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.firstSide !== prevProps.firstSide) {
-      this.setState({
-        firstNum: this.props.firstSide,
-        secondNum: this.props.secondSide
-      })
-      
-    }
-  }
-  render(){
-    return (
-      <div className="domino__item">
-        <div className="domino__side">
-        {
-          this.state.firstNum.map(function(e, i){
-            return <Dots key={i} exist={e}/>
-          })
-        }
-        </div>
-        <div className="domino__side">
-        {
-            this.state.secondNum.map(function(e, i){
-              return <Dots key={i} exist={e}/>
-            })
-          }
-        </div>
-      </div>
-    )
-  }
-}
-
-class Domino extends React.Component {
+class Domino extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -142,7 +92,7 @@ class Domino extends React.Component {
         firstNum = this.state.firstNum,
         secondNum = this.state.secondNum,
         visibility = this.state.isVisible;
-        
+        console.log('load');
     return (
       <div className="domino">
         <div className="domino__wrapper">
@@ -173,7 +123,6 @@ class Domino extends React.Component {
           </div>
         </div>
         <div className={"domino__all-items " + `${visibility}`} >
-        {/* <input className="domino__button" type="button" onClick={this.showAll} value="right"/> */}
             {
               this.collection.map(function(el, i){
                 return <Item
@@ -189,7 +138,9 @@ class Domino extends React.Component {
   }
 }
 
+export default Domino;
+
 ReactDOM.render(
-    <Domino />,
-    document.getElementById('root')
+  <Domino />,
+  document.getElementById("root")
 );

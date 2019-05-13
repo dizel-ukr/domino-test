@@ -1,0 +1,1 @@
+import Domino from './components/domino.jsx';

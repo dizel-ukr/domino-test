@@ -16,7 +16,6 @@
         padding-left: 0px;
         transition: all 1000ms;
         &.hidden {
-            // display: none;
             opacity: 0;
             padding-left: 100px;
         }
@@ -42,10 +41,10 @@
         background: #00dcb8;
 
         &_left {
-            background: url("../img/rotate-left-icon.png") center no-repeat, #00dcb8;
+            background: url("/img/rotate-left-icon.png") center no-repeat, #00dcb8;
         }
         &_right {
-            background: url("../img/rotate-right-icon.png") center no-repeat, #00dcb8;
+            background: url("/img/rotate-right-icon.png") center no-repeat, #00dcb8;
         }
         &:active {
             box-shadow: none;
